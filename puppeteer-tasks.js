@@ -24,6 +24,7 @@ const element_count = (url, element) => { // perhaps "element" should be renamed
     const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage(); 
     await page.goto(url); 
+    // https://codedec.com/tutorials/how-to-get-element-value-in-puppeteer/#:~:text=Puppeteer%20does%20not%20have%20any,element%20with%20the%20same%20selector. 
     _count = await page.$$eval(element, elements => elements.length);
     // console.log(_count); 
     // await page.screenshot({path: 'example.png'});
